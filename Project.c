@@ -1,56 +1,148 @@
+// C program to build the complete
+// snake game
+#include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "final.h"
+#include <unistd.h>
+
+int i, j, height = 20, width = 20;
+int gameover, score;
+int x, y, fruitx, fruity, flag;
+
+// Function to generate the fruit
+// within the boundary
+void setup()
+{
+	gameover = 0;
+
+	// Stores height and width
+	x = height / 2;
+	y = width / 2;
+label1:
+	fruitx = rand() % 20;
+	if (fruitx == 0)
+		goto label1;
+label2:
+	fruity = rand() % 20;
+	if (fruity == 0)
+		goto label2;
+	score = 0;
+}
+
+// Function to draw the boundaries
+void draw()
+{
+	system("cls");
+	for (i = 0; i < height; i++) {
+		for (j = 0; j < width; j++) {
+			if (i == 0 || i == width - 1
+				|| j == 0
+				|| j == height - 1) {
+				printf("#");
+			}
+			else {
+				if (i == x && j == y)
+					printf("0");
+				else if (i == fruitx
+						&& j == fruity)
+					printf("*");
+				else
+					printf(" ");
+			}
+		}
+		printf("\n");
+	}
+
+	// Print the score after the
+	// game ends
+	printf("score = %d", score);
+	printf("\n");
+	printf("press X to quit the game");
+}
+
+// Function to take the input
+void input()
+{
+	if (kbhit()) {
+		switch (getch()) {
+		case 'a':
+			flag = 1;
+			break;
+		case 's':
+			flag = 2;
+			break;
+		case 'd':
+			flag = 3;
+			break;
+		case 'w':
+			flag = 4;
+			break;
+		case 'x':
+			gameover = 1;
+			break;
+		}
+	}
+}
+
+// Function for the logic behind
+// each movement
+void logic()
+{
+	sleep(0.01);
+	switch (flag) {
+	case 1:
+		y--;
+		break;
+	case 2:
+		x++;
+		break;
+	case 3:
+		y++;
+		break;
+	case 4:
+		x--;
+		break;
+	default:
+		break;
+	}
+
+	// If the game is over
+	if (x < 0 || x > height
+		|| y < 0 || y > width)
+		gameover = 1;
+
+	// If snake reaches the fruit
+	// then update the score
+	if (x == fruitx && y == fruity) {
+	label3:
+		fruitx = rand() % 20;
+		if (fruitx == 0)
+			goto label3;
+
+	// After eating the above fruit
+	// generate new fruit
+	label4:
+		fruity = rand() % 20;
+		if (fruity == 0)
+			goto label4;
+		score += 10;
+	}
+}
+
+// Driver Code
 void main()
 {
-    int n1, n, m, value1, value2, x, y, c, a, b, row, ans;
-    float angle, value3;
-    
-    printf("SHASHANK RAWAT \n");
-    printf("SAP ID : 1000014024");
+	int m, n;
 
-    printf("Menu\n");
-    printf("1.Ackerman function\n");
-    printf("2.Computation of m*n using recursive function\n");
-    printf("3.Finding the complete solution of the roots of quadratic equation using function\n");
-    printf("4.Print the triangle( equilateral), square and  +( plus) using *(star)\n");
-    printf("5.Compute the value of sin(x)\n");
-    printf("Enter your choice(1-5):- ");
-    scanf("%d", &n1);
-    switch (n1)
-    {
-    case 1:
-        printf("Enter the value of m:- ");
-        scanf("%d", &m);
-        printf("Enter the value of n:- ");
-        scanf("%d", &n);
-        value1 = A(m, n);
-        printf("value of the function is %d", value1);
-        break;
-    case 2:
-        printf("Enter the Value of the a is:- ");
-        scanf("%d", &x);
-        printf("Enter the value of the b is:- ");
-        scanf("%d", &y);
-        value2 = recursive(x, y);
-        printf("value of the function is %d", value2);
-        break;
-    case 3:
+	// Generate boundary
+	setup();
 
-        quad(a, b, c);
-        break;
-    case 4:
-        printf("Enter the numbers of rows:- ");
-        scanf("%d", &row);
-        pattern(row);
-        break;
-    case 5:
-        printf("Enter the value of the angle in degree:- ");
-        scanf("%f", &angle);
-        value3 = fun(angle);
-        printf("Value of sin(%f) is %f", angle, value3);
-        break;
-    default:
-        printf("You choose invalid number, Please try again");
-    }
+	// Until the game is over
+	while (!gameover) {
+
+		// Function Call
+		draw();
+		input();
+		logic();
+	}
 }
