@@ -1,6 +1,6 @@
 #include <math.h>
 #include <stdio.h>
-void main()
+int main()
 {
 
     // code to find out the area of triangle 
@@ -38,4 +38,6 @@ void main()
                                                                                 
     printf("Perimeter of a triangle is: %d", perimeter); 
     printf("thank you");
+    
+    return 0;
 }
