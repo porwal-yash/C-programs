@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-void main()
+int main()
 {
     printf("Vidush Agarwal 1000014277\n");
     int n, x, c = 0;
@@ -23,4 +23,6 @@ void main()
         printf("%d is Armstrong Number", n);
     else
         printf("%d is not Armstrong Number", n);
+    
+    return 0;
 }
