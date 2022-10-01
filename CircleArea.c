@@ -1,5 +1,5 @@
 #include<stdio.h>
-void main()
+int main()
 
 {
 
@@ -9,4 +9,5 @@ pi=3.14;
 area=pi*r*r;
 printf("Area of circle is = \n%f",area);
 
+  return 0;
 }
