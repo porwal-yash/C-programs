@@ -1,5 +1,5 @@
 #include <stdio.h>
-void main()
+int main()
 {
     printf("Vidush Agarwal 1000014277\n");
     int n, x, sum = 0;
@@ -12,4 +12,6 @@ void main()
         n = n / 10;
     }
     printf("Sum of digits of %d is : %d", x, sum);
+    
+    return 0;
 }
