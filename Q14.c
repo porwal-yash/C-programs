@@ -2,7 +2,6 @@
 #include <string.h>
 void main()
 {
-    printf("Vidush Agarwal\n");
     char a[20];
     printf("Enter string\n");
     scanf("%s", &a);
@@ -19,5 +18,4 @@ void main()
     }
     if (f == 0)
         printf("%s is Palindrome", a);
-    printf("\n1000014277");
 }
