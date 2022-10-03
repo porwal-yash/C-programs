@@ -1,7 +1,6 @@
 #include <stdio.h>
 int main()
 {
-    printf("Vidush Agarwal 1000014277\n");
     int n, x, sum = 0;
     printf("Enter number\n");
     scanf("%d", &n);
