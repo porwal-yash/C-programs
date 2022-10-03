@@ -7,7 +7,6 @@ usingnamespace std;
 
 void main()
 {
-    printf("Vidush Agarwal 1000014277\n");
     int i, j, f = 0;
     for (i = 100; i < 200; i++)
     {
