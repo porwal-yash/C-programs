@@ -1,7 +1,6 @@
 #include <stdio.h>
 void main()
 {
-    printf("Vidush Agarwal 1000014277\n");
     int i, n, x, f = 0;
     printf("Enter length of array\n");
     scanf("%d", &n);
