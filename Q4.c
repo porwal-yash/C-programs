@@ -2,7 +2,7 @@
 #include <math.h>
 int main()
 {
-    printf("Vidush Agarwal 1000014277\n");
+  
     int n, x, c = 0;
     float sum = 0;
     printf("Enter number to check\n");
