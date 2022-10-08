@@ -8,6 +8,7 @@ void ap(int *rad)
     printf("Area of circle with radius %d is : %f\n", rrad, area);
     pie = 2.0 * 22.0 / 7.0 * rrad;
     printf("Perimeter of circle with radius %d is : %f", rrad, pie);
+    printf("Thank You");
 }
 void main()
 {
