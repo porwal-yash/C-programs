@@ -2,7 +2,6 @@
 #include <stdio.h>
 int main()
 {
-
     // code to find out the area of triangle 
     float base, height, area;
     printf("Enter base\n");
@@ -37,7 +36,6 @@ int main()
     perimeter = length1+length2+length3;                                        
                                                                                 
     printf("Perimeter of a triangle is: %d", perimeter); 
-    printf("thank you");
     
     return 0;
 }
