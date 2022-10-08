@@ -20,6 +20,6 @@ void main()
             }
         }
         if (f == 0)
-            printf("%5d", i);
+            printf("%d", i);
     }
 }
