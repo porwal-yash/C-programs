@@ -1,7 +1,7 @@
 #include <stdio.h>
 void main()
 {
-    printf("Vidush Agarwal 1000014277\n");
+   
     int i, sum = 0, x;
     for (i = 400; i <= 600; i++)
     {
