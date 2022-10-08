@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    printf("Vidush Agarwal 1000014277\n");
+    
     float sal, gs, da, hra;
     printf("Enter Ramesh's basic salary\n");
     scanf("%f", &sal);
