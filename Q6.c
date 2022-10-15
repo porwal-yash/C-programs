@@ -8,6 +8,6 @@ void main()
     {
         s = sqrt(i);
         if (s * s == i)
-            printf("%d\t", i);
+            printf("%d", i);
     }
 }
