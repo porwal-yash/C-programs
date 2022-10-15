@@ -50,7 +50,7 @@ void draw()
 					printf(" ");
 			}
 		}
-		printf("\n");
+		printf(" ");
 	}
 
 	// Print the score after the
