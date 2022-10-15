@@ -2,7 +2,7 @@
 void main()
 {
     int i, sum = 0, n;
-    printf("Enter size of array : ");
+    printf("Enter size  array : ");
     scanf("%d", &n);
     int a[n];
     printf("Enter Values\n");
